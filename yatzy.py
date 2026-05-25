@@ -3,7 +3,7 @@ import random
 ## HJÄLPFUNKTIONER OCH VALIDERING
 def frekvenskarta(tarningar):
     """
-    Räknar och visar hur många av varje tärningsvärdesom finns(1-6).
+    Räknar  och visar hur många av varje tärningsvärdesom finns(1-6).
     """
     print("\nfrekvenskarta för tärningarna:" )
     for i in range(1, 7):
