@@ -1,0 +1,59 @@
+YATZY
+
+planering:
+
+1. Ha en huvudmeny(topp / längst ner?)
+- main -- högst upp
+- innehålla antal rundor och poäng/ge val för vad spelaren vill göra(if val.. etc)(alternativ till stänga av också-- använd print("tack för att du spelade..."))
+- variabler för totpoäng och rundor spelade
+- enter ska återvända till meny(alt huvudmeny kommer i terminal igen genom inpuy("...tryck enter" ex))
+- användaren inte skriver 1,2,3 val --> "försök igen".. etc.
+
+2. skapa funktion som visar värde/visar fel etc koden ska inte krascha
+- def frekvenskarta(dices/tärningar) -- visar antal poäng och rundor -- antal(variabel ex)
+- m.m.
+
+2. (en funktion som funkar för indexmatning och när det blir fel) -- validerar&hämtar index.
+- def hamta_index(ex) -- ser till att inmatningen är korrekt även vid fel
+- index ska bara gå för mellan 0 och 4(skapa intervall där index får bara vara de)
+- strängen ska vara tom när spelaren vill stanna "if.. return" inga valda index.
+- index ska funka vid heltal/alt valueerror när det blir fel.
+- använd if/else vid fel. else när allting går som det ska. 
+
+3. funktion för när spela runda/analysera värde
+- använd random.randint för slumptal
+- range(5) -- 5 tärningar
+- visa spelaren index och tärningar så ingen förvirring, ex.. ("Mellanslag elr inga mellanslag(.split(","))) -- vilka index som finns 0-4
+- spelaren får två omkast -- göra något med range(2) -- (ja/nej) ska va lowercase. 
+-- om ja ser till att index visas i nya tärningar och slumpas med randint(1, 6),
+ spelaren kan trycka enter för att bara gå vidare (if not... return..),
+ dra linje tillbaka till(använd hamta_index igen) hamta_index så inmatning index e godkända under felsök. 
+ - presenterar de nya tärningarna --> identifiera vad för kombination --> runda klar --> poäng
+
+4. Kombinationerna(yatzy, kåk etc.)
+ funktion för tärnigar/värde 
+- prio ordning --> returnerar/presenterar kombination och poäng
+- sortera tärningar i storleksordning --> stor eller liten stege ex. ("sorterar=sorted(dices/tarningar)")
+- använda frekvenskarta för räkna antal tärningar för samma värde
+Kombinationer --> yatzy(5 lika och ge 50 poäng -- använd frekvenskarta om 5 like kommer ge 50 poäng och skriva ut "yatzy")
+kåk --> om 3 och 2 förekommer i frekvenskartan summeras tärningarna(sum() -- räknar ihop summan och skriver ut "Kåk")
+tretal --> om 3 förekommer i frekvenser ge oss 3*indexet/alt summan(sum()) och skriver ut "tretal"
+om ingen kombination --> summera allt(chans?)
+liten stege/stor stege --> skriv ut vilka tärningar i ordning om de sorterade i den ordningen och ge 15/20 poäng.
+två par --> om två par av olik värde förekommer i frekvenskartan skriv "2 par" och ge summan av tärningar
+
+[import random
+idx = index
+poäng = 0
+rundor = 0
+print(f"")--> variabel/varaibelvärde]
+
+
+
+
+Projektet är uppdelat i fem funktioner, ordning i kod
+1. frekvenskarta(tarningar) -- Räknar och presenterar antal av varje tärningsvärde(1, 6)
+2. validerahamta_index() -- Hanterar men också säkrar spelarens index-inmatningar.
+3. analysera_hand(tarningar) -- Identifierar kombination och presenterar namn och värde av specifik kombination.
+4. spela_runda() -- Utför spel rundan med 5 tärningar, två omkast och andra möjligheter till för efter rundan.
+5. main() -- Gör det möjligt för spelets meny att köras samt hålla koll på poäng och rundor.
